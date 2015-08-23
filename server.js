@@ -36,9 +36,9 @@ var defaultLogger = {
 };
 		
 var defaultConfig = { 
-    db: 'mongodb://localhost:27017',
+    db: 'mongodb://localhost:3001',
     server: {
-        port: 3000,
+        port: 5000,
         address: "0.0.0.0"
     },
     accessControl: {
@@ -134,7 +134,7 @@ module.exports = {
     }
     
     if (!config.server.port) {
-      config.server.port = 3000;
+      config.server.port = 6000;
     }
 
     logger.verbose('Configuration with defaults applied:');
@@ -186,6 +186,6 @@ if (process.argv.length >= 2) {
     //
     // Auto start server when run as 'node server.js'
     //
-    module.exports.startServer();
+    module.exports.startServer(defaultConfig);
   }
 }
