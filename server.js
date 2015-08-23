@@ -134,7 +134,7 @@ module.exports = {
     }
     
     if (!config.server.port) {
-      config.server.port = 6000;
+      config.server.port = 5000;
     }
 
     logger.verbose('Configuration with defaults applied:');
