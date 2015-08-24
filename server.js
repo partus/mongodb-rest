@@ -36,9 +36,9 @@ var defaultLogger = {
 };
 		
 var defaultConfig = { 
-    db: 'mongodb://localhost:3001',
+    db: 'mongodb://localhost:27017',
     server: {
-        port: 5000,
+        port: 8081,
         address: "0.0.0.0"
     },
     accessControl: {
