@@ -13,7 +13,6 @@ var path = require("path");
 var express = require('express');
 var https = require('https');
 var extend = require("extend");
-
 //
 // Default logger to use, if none is passed in.
 //
@@ -99,7 +98,9 @@ module.exports = {
     var app = express();
     require('express-csv');
 
-    app.use(require('body-parser')());
+    app.use(require('body-parser').json({
+      type: "*/*"
+    }));
 
     if (config.humanReadableOutput) {
       app.set('json spaces', 4);
@@ -186,6 +187,13 @@ if (process.argv.length >= 2) {
     //
     // Auto start server when run as 'node server.js'
     //
+    var hooks 
+    try{
+      hooks = require("./hooks.json")
+    } catch (e){
+      console.log("hooks.json not loaded")
+    }
+    if(hooks) defaultConfig.hooks = hooks;
     module.exports.startServer(defaultConfig);
   }
 }

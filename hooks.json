@@ -1,0 +1,15 @@
+{
+  "insight": {
+    "list_rows": {
+      "identifyBy": ["id","operatorid","templatetype"]
+    },
+    "form_data": {
+      "identifyBy": ["id","operatorid","templatetype"]
+    }
+  },
+  "meteor": {
+    "some": {
+      "identifyBy": ["id","operatorid","templatetype"]
+    }
+  }
+}
